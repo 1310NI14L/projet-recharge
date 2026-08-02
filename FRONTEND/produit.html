@@ -175,6 +175,8 @@
             }
         });
 
+        const API_URL = "https://projet-recharge.onrender.com";
+
         // Envoi AJAX (fetch) vers Flask
         document.getElementById('recharge-form').addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -190,7 +192,7 @@
             };
 
             try {
-                const response = await fetch('/api/tickets', {
+                const response = await fetch(`${API_URL}/api/tickets`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)

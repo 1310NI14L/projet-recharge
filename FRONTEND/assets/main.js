@@ -106,7 +106,7 @@
           result.innerHTML = '';
 
           try {
-            const res = await fetch(`/api/tickets/status?q=${encodeURIComponent(q)}`);
+            const res = await fetch(`${API_URL}/api/tickets/status?q=${encodeURIComponent(q)}`);
 
             if (res.ok) {
               const json = await res.json();

@@ -198,6 +198,7 @@
     <script src="assets/all.min.js"></script>
     <script>
       (function () {
+        const API_URL = "https://projet-recharge.onrender.com";
         const form = document.getElementById("ticketForm");
         const alertArea = document.getElementById("alertArea");
 
@@ -222,7 +223,7 @@
           };
 
           try {
-            const res = await fetch("/api/tickets", {
+            const res = await fetch(`${API_URL}/api/tickets`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(data),
