@@ -14,6 +14,9 @@ CORS(app)
 # --- ROUTES PAGES HTML ---
 
 @app.route('/')
+def home():
+    return {"status": "online", "message": "API Projet Recharge operational"}, 200
+
 @app.route('/index.html')
 def index():
     return send_from_directory('../frontend', 'index.html')
