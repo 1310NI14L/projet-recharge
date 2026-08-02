@@ -2,70 +2,81 @@
         // Base de données des textes et visuels par marque
         const cardsData = {
           neosurf: {
+            badge: "Neosurf",
             title: "Neosurf",
-            image: "assets/image/neosurf.png",
-            trustText: "Vos recharges Neosurf sont contrôlées de manière ultra-sécurisée. Effectuez vos paiements sur le web en toute tranquillité d'esprit sans révéler vos coordonnées bancaires."
+            visual: `<img src="assets/image/neosurf.png" alt="Neosurf" class="img-fluid" style="max-height: 120px; object-fit: contain">`,
+            description: "Vos recharges Neosurf sont contrôlées de manière ultra-sécurisée. Effectuez vos paiements sur le web en toute tranquillité d'esprit sans révéler vos coordonnées bancaires."
           },
           pcs: {
+            badge: "PCS Mastercard",
             title: "PCS Mastercard",
-            image: "assets/image/pcs.png",
-            trustText: "Contrôle instantané pour coupons PCS. Assurez-vous du solde et de la validité de votre recharge avant de créditer votre carte prépayée."
+            visual: `<img src="assets/image/pcs.png" alt="PCS Mastercard" class="img-fluid" style="max-height: 120px; object-fit: contain">`,
+            description: "Contrôle instantané pour coupons PCS. Assurez-vous du solde et de la validité de votre recharge avant de créditer votre carte prépayée."
           },
           transcash: {
+            badge: "Transcash",
             title: "Transcash",
-            image: "assets/image/transcash.png",
-            trustText: "Authentification garantie de votre recharge Transcash. Profitez d'un transfert de fond sûr et immédiat sur votre carte de paiement."
+            visual: `<img src="assets/image/transcash.png" alt="Transcash" class="img-fluid" style="max-height: 120px; object-fit: contain">`,
+            description: "Authentification garantie de votre recharge Transcash. Profitez d'un transfert de fond sûr et immédiat sur votre carte de paiement."
           },
           paysafecard: {
+            badge: "Paysafecard",
             title: "Paysafecard",
-            image: "assets/image/paysafecard.png",
-            trustText: "Solution de paiement prépayée leader du marché. Ce vérificateur contrôle la conformité et l'activation de votre ticket d'achat."
+            visual: `<img src="assets/image/paysafecard.png" alt="Paysafecard" class="img-fluid" style="max-height: 120px; object-fit: contain">`,
+            description: "Solution de paiement prépayée leader du marché. Ce vérificateur contrôle la conformité et l'activation de votre ticket d'achat."
           },
           orange: {
+            badge: "Recharge Orange",
             title: "Recharge Orange",
-            image: "assets/image/orange.png",
-            trustText: "Vérifiez vos crédits téléphoniques et pass Internet Orange. Transaction garantie et validation directe auprès de l'opérateur."
+            visual: `<img src="assets/image/orange.png" alt="Recharge Orange" class="img-fluid" style="max-height: 120px; object-fit: contain">`,
+            description: "Vérifiez vos crédits téléphoniques et pass Internet Orange. Transaction garantie et validation directe auprès de l'opérateur."
           },
           lycamobile: {
+            badge: "Lycamobile",
             title: "Lycamobile",
-            image: "assets/image/lycamobile.png",
-            trustText: "Contrôlez l'état de votre recharge d'appel nationale ou internationale Lycamobile pour rester connecté en toute sérénité."
+            visual: `<img src="assets/image/lycamobile.png" alt="Lycamobile" class="img-fluid" style="max-height: 120px; object-fit: contain">`,
+            description: "Contrôlez l'état de votre recharge d'appel nationale ou internationale Lycamobile pour rester connecté en toute sérénité."
           },
           sfr: {
+            badge: "Recharge SFR",
             title: "Recharge SFR",
-            image: "assets/image/sfr.png",
-            trustText: "Contrôle rapide des codes de recharge SFR La Carte. Assurez-vous que votre coupon est prêt à recharger votre mobile."
+            visual: `<img src="assets/image/sfr.png" alt="Recharge SFR" class="img-fluid" style="max-height: 120px; object-fit: contain">`,
+            description: "Contrôle rapide des codes de recharge SFR La Carte. Assurez-vous que votre coupon est prêt à recharger votre mobile."
           },
           roblox: {
+            badge: "Roblox Robux",
             title: "Roblox Robux",
-            image: "assets/image/roblox.png",
-            trustText: "Vérifiez vos cartes cadeaux Roblox en toute sécurité avant d'ajouter vos Robux ou d'activer votre abonnement Premium."
+            visual: `<img src="assets/image/roblox.png" alt="Roblox Robux" class="img-fluid" style="max-height: 120px; object-fit: contain">`,
+            description: "Vérifiez vos cartes cadeaux Roblox en toute sécurité avant d'ajouter vos Robux ou d'activer votre abonnement Premium."
           }
         };
 
+        const defaultCard = {
+          badge: "Sécurité Officielle",
+          title: "Vérification de Ticket",
+          visual: `<div class="d-flex align-items-center justify-content-center" style="min-height: 140px;"><i class="fa-solid fa-shield-halved fa-5x text-primary"></i></div>`,
+          description: "Entrez votre code ou votre e-mail pour vérifier l'authenticité et le statut de votre recharge en toute sécurité."
+        };
+
+        const form = document.getElementById('statusForm');
+        if (!form) return;
+
         // Éléments du DOM (Bloc Gauche)
+        const cardBadge = document.getElementById('cardBadge');
         const cardTitle = document.getElementById('cardTitle');
-        const cardImage = document.getElementById('cardImage');
+        const cardVisual = document.getElementById('cardVisual');
         const cardTrustText = document.getElementById('cardTrustText');
 
-        // Récupération de la carte dans l'URL (ex: statut.html?carte=pcs)
-        const urlParams = new URLSearchParams(window.location.search);
-        let selectedCarte = urlParams.get('carte') ? urlParams.get('carte').toLowerCase() : 'neosurf';
-
-        // Fonction pour mettre à jour l'affichage de la carte
         function updateCardDisplay(type) {
-          const data = cardsData[type] || cardsData['neosurf'];
+          const data = cardsData[type] || defaultCard;
+          cardBadge.textContent = data.badge;
           cardTitle.textContent = data.title;
-          cardImage.src = data.image;
-          cardImage.alt = data.title;
-          cardTrustText.textContent = data.trustText;
+          cardVisual.innerHTML = data.visual;
+          cardTrustText.textContent = data.description;
         }
 
-        // Initialisation de la carte au chargement de la page
-        updateCardDisplay(selectedCarte);
+        updateCardDisplay('default');
 
-        // --- GESTION DU FORMULAIRE ET RECHERCHE ---
-        const form = document.getElementById('statusForm');
         const queryInput = document.getElementById('query');
         const result = document.getElementById('result');
         const btnText = document.getElementById('btnText');
@@ -96,21 +107,20 @@
 
           try {
             const res = await fetch(`/api/tickets/status?q=${encodeURIComponent(q)}`);
-            
+
             if (res.ok) {
               const json = await res.json();
               const tickets = Array.isArray(json) ? json : (json?.tickets || []);
               if (tickets.length) {
                 let html = '<div class="d-flex flex-column gap-2 mt-2">';
-                
+
                 tickets.forEach(t => {
-                  // Mettre à jour la carte de gauche en fonction du type de carte trouvé dans le ticket
                   if (t.type_carte) {
                     updateCardDisplay(t.type_carte.toLowerCase());
                   }
 
                   const dateFormatted = t.created_at ? new Date(t.created_at).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' }) : 'N/A';
-                  
+
                   html += `
                     <div class="card border bg-light rounded-3 p-3">
                       <div class="d-flex justify-content-between align-items-center mb-1">
@@ -132,6 +142,7 @@
                   <div class="alert alert-warning border-0 rounded-3 text-center my-2 small">
                     Aucun ticket correspondant trouvé.
                   </div>`;
+                updateCardDisplay('default');
               }
             } else {
               result.innerHTML = `

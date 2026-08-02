@@ -8,35 +8,72 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/all.min.css" />
     <!-- Style personnalisé -->
     <link rel="stylesheet" href="assets/style.css" />
   </head>
-  <body class="bg-light">
+  <body class="homepage d-flex flex-column min-vh-100">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-transparent shadow-sm sticky-top"
+    >
       <div class="container">
-        <a class="navbar-brand fw-bold fs-4" href="index.html">💳 Jacques Recharge</a>
+        <a class="navbar-brand fw-bold fs-4" href="index.html"
+          ><i class="fa-regular fa-credit-card"></i>
+          <i class="fa-solid fa-rotate fa-spin"></i> Jacques Recharge</a
+        >
         <div class="ms-auto">
-          <a href="controle.html" class="btn btn-outline-light btn-sm px-3 rounded-pill">Vérifier un ticket</a>
+          <a
+            href="controle.html"
+            class="btn btn-outline-light btn-sm px-3 rounded-pill"
+            >Vérifier un ticket</a
+          >
         </div>
       </div>
     </nav>
 
     <!-- Carrousel Header Section -->
-    <section id="mainCarousel" class="carousel slide mb-5 shadow-sm" data-bs-ride="carousel" data-bs-interval="4000">
+    <section
+      id="mainCarousel"
+      class="carousel slide mb-5 shadow-sm"
+      data-bs-ride="carousel"
+      data-bs-interval="4000"
+    >
       <!-- Indicateurs -->
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
-        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"></button>
+        <button
+          type="button"
+          data-bs-target="#mainCarousel"
+          data-bs-slide-to="0"
+          class="active"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#mainCarousel"
+          data-bs-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#mainCarousel"
+          data-bs-slide-to="2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#mainCarousel"
+          data-bs-slide-to="3"
+        ></button>
       </div>
 
       <!-- Diapositives -->
       <div class="carousel-inner">
         <!-- Slide 1 -->
         <div class="carousel-item active">
-          <img src="assets/image/slider1.png" class="d-block w-100" alt="Recharge instantanée" style="height: 380px; object-fit: cover; filter: brightness(0.4)" />
+          <img
+            src="assets/image/slider1.png"
+            class="d-block w-100"
+            alt="Recharge instantanée"
+            style="height: 380px; object-fit: cover; filter: brightness(0.4)"
+          />
           <div class="carousel-caption text-start mb-4">
             <h1 class="display-6 fw-bold">Rechargez en toute simplicité</h1>
             <p class="lead d-none d-md-block">
@@ -47,43 +84,71 @@
 
         <!-- Slide 2 -->
         <div class="carousel-item">
-          <img src="assets/image/slider2.png" class="d-block w-100" alt="Paiement Sécurisé" style="height: 380px; object-fit: cover; filter: brightness(0.4)" />
+          <img
+            src="assets/image/slider2.png"
+            class="d-block w-100"
+            alt="Paiement Sécurisé"
+            style="height: 380px; object-fit: cover; filter: brightness(0.4)"
+          />
           <div class="carousel-caption text-start mb-4">
             <h1 class="display-6 fw-bold">Livraison par E-mail</h1>
             <p class="lead d-none d-md-block">
-              Recevez directement votre code de recharge de manière instantanée et sécurisée.
+              Recevez directement votre code de recharge de manière instantanée
+              et sécurisée.
             </p>
           </div>
         </div>
 
         <!-- Slide 3 -->
         <div class="carousel-item">
-          <img src="assets/image/slider3.png" class="d-block w-100" alt="Crédits d'appel" style="height: 380px; object-fit: cover; filter: brightness(0.4)" />
+          <img
+            src="assets/image/slider3.png"
+            class="d-block w-100"
+            alt="Crédits d'appel"
+            style="height: 380px; object-fit: cover; filter: brightness(0.4)"
+          />
           <div class="carousel-caption text-start mb-4">
             <h1 class="display-6 fw-bold">Recharges Mobiles</h1>
             <p class="lead d-none d-md-block">
-              Crédit d'appel et forfaits Internet Orange, SFR et Lycamobile disponibles.
+              Crédit d'appel et forfaits Internet Orange, SFR et Lycamobile
+              disponibles.
             </p>
           </div>
         </div>
 
         <!-- Slide 4 -->
         <div class="carousel-item">
-          <img src="assets/image/slider4.png" class="d-block w-100" alt="Contrôle de ticket" style="height: 380px; object-fit: cover; filter: brightness(0.4)" />
+          <img
+            src="assets/image/slider4.png"
+            class="d-block w-100"
+            alt="Contrôle de ticket"
+            style="height: 380px; object-fit: cover; filter: brightness(0.4)"
+          />
           <div class="carousel-caption text-start mb-4">
             <h1 class="display-6 fw-bold">Contrôle & Sécurisation</h1>
             <p class="lead d-none d-md-block">
-              Vérifiez la validité de vos coupons et tickets prépayés avant utilisation.
+              Vérifiez la validité de vos coupons et tickets prépayés avant
+              utilisation.
             </p>
           </div>
         </div>
       </div>
 
       <!-- Contrôles Précédent / Suivant -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#mainCarousel"
+        data-bs-slide="prev"
+      >
         <span class="carousel-control-prev-icon"></span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#mainCarousel"
+        data-bs-slide="next"
+      >
         <span class="carousel-control-next-icon"></span>
       </button>
     </section>
@@ -100,211 +165,416 @@
       <div class="row g-4">
         <!-- Carte 1 : Neosurf -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white">
-            <div class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3" style="height: 110px">
-              <img src="assets/image/neosurf.png" alt="Neosurf" class="img-fluid" style="max-height: 80px; object-fit: contain" />
+          <div
+            class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white"
+          >
+            <div
+              class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3"
+              style="height: 110px"
+            >
+              <img
+                src="assets/image/neosurf.png"
+                alt="Neosurf"
+                class="img-fluid"
+                style="max-height: 80px; object-fit: contain"
+              />
             </div>
-            <div class="card-body px-0 d-flex flex-column justify-content-between pt-3">
+            <div
+              class="card-body px-0 d-flex flex-column justify-content-between pt-3"
+            >
               <h6 class="fw-bold text-dark mb-1">Neosurf</h6>
-              <p class="text-muted extra-small mb-3" style="font-size: 0.825rem;">
+              <p
+                class="text-muted extra-small mb-3"
+                style="font-size: 0.825rem"
+              >
                 Paiement sécurisé en ligne sans carte bancaire.
               </p>
-              <a href="produit.html?carte=neosurf" class="btn btn-primary btn-sm w-100 fw-bold btn-card-action">Voir les montants</a>
+              <a
+                href="produit.html?carte=neosurf"
+                class="btn btn-primary btn-sm w-100 fw-bold btn-card-action"
+                >Voir les montants</a
+              >
             </div>
           </div>
         </div>
 
         <!-- Carte 2 : PCS -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white">
-            <div class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3" style="height: 110px">
-              <img src="assets/image/pcs.png" alt="PCS Mastercard" class="img-fluid" style="max-height: 80px; object-fit: contain" />
+          <div
+            class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white"
+          >
+            <div
+              class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3"
+              style="height: 110px"
+            >
+              <img
+                src="assets/image/pcs.png"
+                alt="PCS Mastercard"
+                class="img-fluid"
+                style="max-height: 80px; object-fit: contain"
+              />
             </div>
-            <div class="card-body px-0 d-flex flex-column justify-content-between pt-3">
+            <div
+              class="card-body px-0 d-flex flex-column justify-content-between pt-3"
+            >
               <h6 class="fw-bold text-dark mb-1">PCS Mastercard</h6>
-              <p class="text-muted extra-small mb-3" style="font-size: 0.825rem;">
+              <p
+                class="text-muted extra-small mb-3"
+                style="font-size: 0.825rem"
+              >
                 Recharge pour carte prépayée Mastercard.
               </p>
-              <a href="produit.html?carte=pcs" class="btn btn-primary btn-sm w-100 fw-bold btn-card-action">Voir les montants</a>
+              <a
+                href="produit.html?carte=pcs"
+                class="btn btn-primary btn-sm w-100 fw-bold btn-card-action"
+                >Voir les montants</a
+              >
             </div>
           </div>
         </div>
 
         <!-- Carte 3 : Transcash -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white">
-            <div class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3" style="height: 110px">
-              <img src="assets/image/transcash.png" alt="Transcash" class="img-fluid" style="max-height: 80px; object-fit: contain" />
+          <div
+            class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white"
+          >
+            <div
+              class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3"
+              style="height: 110px"
+            >
+              <img
+                src="assets/image/transcash.png"
+                alt="Transcash"
+                class="img-fluid"
+                style="max-height: 80px; object-fit: contain"
+              />
             </div>
-            <div class="card-body px-0 d-flex flex-column justify-content-between pt-3">
+            <div
+              class="card-body px-0 d-flex flex-column justify-content-between pt-3"
+            >
               <h6 class="fw-bold text-dark mb-1">Transcash</h6>
-              <p class="text-muted extra-small mb-3" style="font-size: 0.825rem;">
+              <p
+                class="text-muted extra-small mb-3"
+                style="font-size: 0.825rem"
+              >
                 Code de recharge rapide pour formule Transcash.
               </p>
-              <a href="produit.html?carte=transcash" class="btn btn-primary btn-sm w-100 fw-bold btn-card-action">Voir les montants</a>
+              <a
+                href="produit.html?carte=transcash"
+                class="btn btn-primary btn-sm w-100 fw-bold btn-card-action"
+                >Voir les montants</a
+              >
             </div>
           </div>
         </div>
 
         <!-- Carte 4 : Paysafecard -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white">
-            <div class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3" style="height: 110px">
-              <img src="assets/image/paysafecard.png" alt="Paysafecard" class="img-fluid" style="max-height: 80px; object-fit: contain" />
+          <div
+            class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white"
+          >
+            <div
+              class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3"
+              style="height: 110px"
+            >
+              <img
+                src="assets/image/paysafecard.png"
+                alt="Paysafecard"
+                class="img-fluid"
+                style="max-height: 80px; object-fit: contain"
+              />
             </div>
-            <div class="card-body px-0 d-flex flex-column justify-content-between pt-3">
+            <div
+              class="card-body px-0 d-flex flex-column justify-content-between pt-3"
+            >
               <h6 class="fw-bold text-dark mb-1">Paysafecard</h6>
-              <p class="text-muted extra-small mb-3" style="font-size: 0.825rem;">
+              <p
+                class="text-muted extra-small mb-3"
+                style="font-size: 0.825rem"
+              >
                 Ticket prépayé pour vos achats web.
               </p>
-              <a href="produit.html?carte=paysafecard" class="btn btn-primary btn-sm w-100 fw-bold btn-card-action">Voir les montants</a>
+              <a
+                href="produit.html?carte=paysafecard"
+                class="btn btn-primary btn-sm w-100 fw-bold btn-card-action"
+                >Voir les montants</a
+              >
             </div>
           </div>
         </div>
 
         <!-- Carte 5 : Orange -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white">
-            <div class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3" style="height: 110px">
-              <img src="assets/image/orange.png" alt="Orange Mobile" class="img-fluid" style="max-height: 80px; object-fit: contain" />
+          <div
+            class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white"
+          >
+            <div
+              class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3"
+              style="height: 110px"
+            >
+              <img
+                src="assets/image/orange.png"
+                alt="Orange Mobile"
+                class="img-fluid"
+                style="max-height: 80px; object-fit: contain"
+              />
             </div>
-            <div class="card-body px-0 d-flex flex-column justify-content-between pt-3">
+            <div
+              class="card-body px-0 d-flex flex-column justify-content-between pt-3"
+            >
               <h6 class="fw-bold text-dark mb-1">Orange Mobile</h6>
-              <p class="text-muted extra-small mb-3" style="font-size: 0.825rem;">
+              <p
+                class="text-muted extra-small mb-3"
+                style="font-size: 0.825rem"
+              >
                 Recharge crédit d'appel et Internet mobile.
               </p>
-              <a href="produit.html?carte=orange" class="btn btn-primary btn-sm w-100 fw-bold btn-card-action">Voir les montants</a>
+              <a
+                href="produit.html?carte=orange"
+                class="btn btn-primary btn-sm w-100 fw-bold btn-card-action"
+                >Voir les montants</a
+              >
             </div>
           </div>
         </div>
 
         <!-- Carte 6 : Lycamobile -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white">
-            <div class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3" style="height: 110px">
-              <img src="assets/image/lycamobile.png" alt="Lycamobile" class="img-fluid" style="max-height: 80px; object-fit: contain" />
+          <div
+            class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white"
+          >
+            <div
+              class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3"
+              style="height: 110px"
+            >
+              <img
+                src="assets/image/lycamobile.png"
+                alt="Lycamobile"
+                class="img-fluid"
+                style="max-height: 80px; object-fit: contain"
+              />
             </div>
-            <div class="card-body px-0 d-flex flex-column justify-content-between pt-3">
+            <div
+              class="card-body px-0 d-flex flex-column justify-content-between pt-3"
+            >
               <h6 class="fw-bold text-dark mb-1">Lycamobile</h6>
-              <p class="text-muted extra-small mb-3" style="font-size: 0.825rem;">
+              <p
+                class="text-muted extra-small mb-3"
+                style="font-size: 0.825rem"
+              >
                 Recharge mobile nationale et internationale.
               </p>
-              <a href="produit.html?carte=lycamobile" class="btn btn-primary btn-sm w-100 fw-bold btn-card-action">Voir les montants</a>
+              <a
+                href="produit.html?carte=lycamobile"
+                class="btn btn-primary btn-sm w-100 fw-bold btn-card-action"
+                >Voir les montants</a
+              >
             </div>
           </div>
         </div>
 
         <!-- Carte 7 : SFR -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white">
-            <div class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3" style="height: 110px">
-              <img src="assets/image/sfr.png" alt="SFR Mobile" class="img-fluid" style="max-height: 80px; object-fit: contain" />
+          <div
+            class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white"
+          >
+            <div
+              class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3"
+              style="height: 110px"
+            >
+              <img
+                src="assets/image/sfr.png"
+                alt="SFR Mobile"
+                class="img-fluid"
+                style="max-height: 80px; object-fit: contain"
+              />
             </div>
-            <div class="card-body px-0 d-flex flex-column justify-content-between pt-3">
+            <div
+              class="card-body px-0 d-flex flex-column justify-content-between pt-3"
+            >
               <h6 class="fw-bold text-dark mb-1">SFR Mobile</h6>
-              <p class="text-muted extra-small mb-3" style="font-size: 0.825rem;">
+              <p
+                class="text-muted extra-small mb-3"
+                style="font-size: 0.825rem"
+              >
                 Recharge passe et crédit SFR.
               </p>
-              <a href="produit.html?carte=sfr" class="btn btn-primary btn-sm w-100 fw-bold btn-card-action">Voir les montants</a>
+              <a
+                href="produit.html?carte=sfr"
+                class="btn btn-primary btn-sm w-100 fw-bold btn-card-action"
+                >Voir les montants</a
+              >
             </div>
           </div>
         </div>
 
         <!-- Carte 8 : Roblox -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white">
-            <div class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3" style="height: 110px">
-              <img src="assets/image/roblox.png" alt="Roblox" class="img-fluid" style="max-height: 80px; object-fit: contain" />
+          <div
+            class="card h-100 border-0 shadow-sm text-center p-3 product-card bg-white"
+          >
+            <div
+              class="card-img-container d-flex align-items-center justify-content-center overflow-hidden rounded-3"
+              style="height: 110px"
+            >
+              <img
+                src="assets/image/roblox.png"
+                alt="Roblox"
+                class="img-fluid"
+                style="max-height: 80px; object-fit: contain"
+              />
             </div>
-            <div class="card-body px-0 d-flex flex-column justify-content-between pt-3">
+            <div
+              class="card-body px-0 d-flex flex-column justify-content-between pt-3"
+            >
               <h6 class="fw-bold text-dark mb-1">Roblox Robux</h6>
-              <p class="text-muted extra-small mb-3" style="font-size: 0.825rem;">
+              <p
+                class="text-muted extra-small mb-3"
+                style="font-size: 0.825rem"
+              >
                 Carte cadeau Robux & abonnement Premium.
               </p>
-              <a href="produit.html?carte=roblox" class="btn btn-primary btn-sm w-100 fw-bold btn-card-action">Voir les montants</a>
+              <a
+                href="produit.html?carte=roblox"
+                class="btn btn-primary btn-sm w-100 fw-bold btn-card-action"
+                >Voir les montants</a
+              >
             </div>
           </div>
         </div>
       </div>
     </main>
 
-<!-- Section À Propos Redesignée -->
-<section class="about-section bg-white py-5 border-top">
-  <div class="container py-3">
-    <div class="row align-items-center g-5">
-      
-      <!-- Colonne Texte & Points Forts -->
-      <div class="col-lg-7">
-        <span class="badge bg-primary-subtle text-primary fw-semibold px-3 py-2 rounded-pill mb-3">
-          À propos de nous
-        </span>
-        <h2 class="fw-bold mb-3 text-dark display-6">
-          Votre partenaire de confiance pour toutes vos recharges
-        </h2>
-        <p class="text-muted leading-relaxed fs-6">
-          <strong class="text-dark">Jacques Recharge</strong> est votre solution rapide, fiable et 100% sécurisée pour l'achat de vos cartes de recharge en ligne. Que ce soit pour alimenter vos cartes prépayées (Neosurf, PCS, Transcash, Paysafecard) ou recharger votre forfait mobile (Orange, SFR, Lycamobile), nous garantissons une transmission instantanée de vos codes.
-        </p>
-        <p class="text-muted leading-relaxed mb-4">
-          Nous mettons un point d'honneur à vous offrir un service de contrôle transparent afin de vérifier l'authenticité de vos coupons en toute sérénité.
-        </p>
+    <!-- Section À Propos Redesignée -->
+    <section class="about-section bg-white py-5 border-top">
+      <div class="container py-3">
+        <div class="row align-items-center g-5">
+          <!-- Colonne Texte & Points Forts -->
+          <div class="col-lg-7">
+            <span
+              class="badge bg-primary-subtle text-primary fw-semibold px-3 py-2 rounded-pill mb-3"
+            >
+              À propos de nous
+            </span>
+            <h2 class="fw-bold mb-3 text-dark display-6">
+              Votre partenaire de confiance pour toutes vos recharges
+            </h2>
+            <p class="text-muted leading-relaxed fs-6">
+              <strong class="text-dark">Jacques Recharge</strong> est votre
+              solution rapide, fiable et 100% sécurisée pour l'achat de vos
+              cartes de recharge en ligne. Que ce soit pour alimenter vos cartes
+              prépayées (Neosurf, PCS, Transcash, Paysafecard) ou recharger
+              votre forfait mobile (Orange, SFR, Lycamobile), nous garantissons
+              une transmission instantanée de vos codes.
+            </p>
+            <p class="text-muted leading-relaxed mb-4">
+              Nous mettons un point d'honneur à vous offrir un service de
+              contrôle transparent afin de vérifier l'authenticité de vos
+              coupons en toute sérénité.
+            </p>
 
-        <!-- Grille des Points Forts Animés -->
-        <div class="row g-4 pt-2">
-          <div class="col-sm-6">
-            <div class="d-flex align-items-center about-feature-item">
-              <div class="about-icon-badge bg-primary-subtle text-primary fw-bold rounded-circle me-3 d-flex align-items-center justify-content-center fs-5 shadow-sm">
-                ⚡
+            <!-- Grille des Points Forts Animés -->
+            <div class="row g-4 pt-2">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center about-feature-item">
+                  <div
+                    class="about-icon-badge bg-primary-subtle text-primary fw-bold rounded-circle me-3 d-flex align-items-center justify-content-center fs-5 shadow-sm"
+                  >
+                    <i class="fa-solid fa-circle-bolt"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-0 fw-bold text-dark">
+                      Livraison Instantanée
+                    </h6>
+                    <small class="text-muted"
+                      >Réception immédiate du code</small
+                    >
+                  </div>
+                </div>
               </div>
-              <div>
-                <h6 class="mb-0 fw-bold text-dark">Livraison Instantanée</h6>
-                <small class="text-muted">Réception immédiate du code</small>
+
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center about-feature-item">
+                  <div
+                    class="about-icon-badge bg-success-subtle text-success fw-bold rounded-circle me-3 d-flex align-items-center justify-content-center fs-5 shadow-sm"
+                  >
+                    <i class="fa-solid fa-lock"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-0 fw-bold text-dark">100% Sécurisé</h6>
+                    <small class="text-muted">Transactions protégées</small>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-sm-6">
-            <div class="d-flex align-items-center about-feature-item">
-              <div class="about-icon-badge bg-success-subtle text-success fw-bold rounded-circle me-3 d-flex align-items-center justify-content-center fs-5 shadow-sm">
-                🔒
+          <!-- Colonne Carte d'Action & Réassurance -->
+          <div class="col-lg-5">
+            <div
+              class="p-4 p-md-5 rounded-4 bg-light shadow-sm text-center about-card-trust"
+            >
+              <div class="mb-3 fs-1 about-shield-icon">
+                <i class="fa-solid fa-shield-halved"></i>
               </div>
-              <div>
-                <h6 class="mb-0 fw-bold text-dark">100% Sécurisé</h6>
-                <small class="text-muted">Transactions protégées</small>
-              </div>
+              <h4 class="fw-bold mb-2 text-dark">
+                Besoin de vérifier un ticket ?
+              </h4>
+              <p class="text-muted small mb-4">
+                Utilisez notre outil de contrôle en ligne pour vous assurer du
+                statut et de l'authenticité de vos coupons avant toute
+                transaction.
+              </p>
+              <a
+                href="controle.html"
+                class="btn btn-primary btn-md rounded-pill fw-bold px-4 py-2 shadow-sm btn-card-action"
+              >
+                Contrôler un ticket
+              </a>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Colonne Carte d'Action & Réassurance -->
-      <div class="col-lg-5">
-        <div class="p-4 p-md-5 rounded-4 bg-light shadow-sm text-center about-card-trust">
-          <div class="mb-3 fs-1 about-shield-icon">🛡️</div>
-          <h4 class="fw-bold mb-2 text-dark">Besoin de vérifier un ticket ?</h4>
-          <p class="text-muted small mb-4">
-            Utilisez notre outil de contrôle en ligne pour vous assurer du statut et de l'authenticité de vos coupons avant toute transaction.
-          </p>
-          <a href="controle.html" class="btn btn-primary btn-md rounded-pill fw-bold px-4 py-2 shadow-sm btn-card-action">
-            Contrôler un ticket
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Pied de page -->
-    <footer class="bg-dark text-white text-center py-4 mt-auto">
+    <footer class="site-footer">
       <div class="container">
-        <p class="mb-0 small">
-          &copy; 2026 Jacques Recharge. Tous droits réservés.
-        </p>
+        <div class="row gy-3">
+          <div class="col-md-4 text-start">
+            <h5 class="fw-bold text-white">Jacques Recharge</h5>
+            <p class="text-white-50 small mb-0">Recharge instantanée et contrôle de tickets. Support 7j/7.</p>
+          </div>
+          <div class="col-md-2">
+            <h6 class="fw-semibold text-white">Liens</h6>
+            <ul class="footer-links small mb-0">
+              <li><i class="fa-solid fa-house"></i><a href="index.html" class="text-white-50 text-decoration-none">Accueil</a></li>
+              <li><i class="fa-solid fa-paper-plane"></i><a href="controle.html" class="text-white-50 text-decoration-none">Soumettre</a></li>
+              <li><i class="fa-solid fa-search"></i><a href="statut.html" class="text-white-50 text-decoration-none">Statut</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h6 class="fw-semibold text-white">Support</h6>
+            <p class="small text-white-50 mb-0">support@jacquesrecharge.example</p>
+            <p class="small text-white-50 mb-0">+33 6 12 34 56 78</p>
+          </div>
+          <div class="col-md-3 text-end">
+            <h6 class="fw-semibold text-white">Suivez-nous</h6>
+            <div class="d-flex justify-content-end gap-2 mt-2">
+              <a href="#" class="text-white"><i class="fab fa-facebook fa-lg"></i></a>
+              <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+              <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr class="border-secondary my-3" />
+        <div class="text-center small text-white-50">&copy; 2026 Jacques Recharge. Tous droits réservés.</div>
       </div>
     </footer>
 
     <!-- Bootstrap JS Bundle -->
     <script src="assets/bootstrap.bundle.min.js"></script>
+    <script src="assets/all.min.js"></script>
     <!-- Script principal -->
     <script src="assets/main.js"></script>
   </body>

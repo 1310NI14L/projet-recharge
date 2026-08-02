@@ -1,8 +1,12 @@
 ﻿:root {
-    --brand-primary: #0d6efd;
-    --brand-dark: #212529;
-    --brand-orange: #ff7a00;
+    --brand-primary: #7c3aed;
+    --brand-secondary: #9333ea;
+    --brand-accent: #c084fc;
+    --brand-dark: #120a2f;
+    --brand-orange: #d946ef;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -11,9 +15,9 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f6ff;
+    color: #2d273f;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -25,8 +29,8 @@ body.product-page header {
     justify-content: center;
     align-items: center;
     padding: 16px 20px;
-    background: #ffffff;
-    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.05);
+    background: transparent;
+    box-shadow: none;
     position: sticky;
     top: 0;
     z-index: 20;
@@ -72,13 +76,13 @@ body.product-page main {
 }
 
 .btn-nav-outline {
-    border: 1px solid rgba(13, 110, 253, 0.18);
-    color: #0d6efd;
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    color: var(--brand-primary);
     background-color: #ffffff;
 }
 
 .btn-nav-primary {
-    background-color: #0d6efd;
+    background-color: var(--brand-primary);
     color: #ffffff;
 }
 
@@ -86,6 +90,98 @@ body.product-page main {
 .btn-nav-primary:hover {
     transform: translateY(-1px);
     opacity: 0.95;
+    box-shadow: 0 10px 24px rgba(124, 58, 237, 0.12);
+}
+
+/* Header / Navbar adjustments */
+.navbar {
+    background: transparent !important;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.navbar .navbar-brand {
+    color: var(--brand-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.05rem;
+}
+.navbar .container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.navbar .ms-auto {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.navbar .nav-link,
+.navbar .btn,
+.navbar .navbar-text {
+    color: rgba(255,255,255,0.95);
+}
+.navbar .btn {
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+}
+.navbar .btn-outline-light {
+    color: #ffffff;
+    border-color: rgba(124, 58, 237, 0.35);
+    background-color: rgba(124, 58, 237, 0.18);
+}
+.navbar .btn-outline-light:hover {
+    background: rgba(124, 58, 237, 0.32);
+    border-color: var(--brand-secondary);
+}
+
+/* Override Bootstrap primary utilities to use violet palette */
+.btn-primary {
+    background-color: var(--brand-primary) !important;
+    border-color: var(--brand-primary) !important;
+    color: #fff !important;
+}
+.btn-primary:hover {
+    background-color: var(--brand-secondary) !important;
+    border-color: var(--brand-secondary) !important;
+    box-shadow: 0 8px 20px rgba(124,58,237,0.18) !important;
+}
+.badge.bg-primary-subtle {
+    background-color: rgba(147,62,234,0.10) !important;
+    color: var(--brand-primary) !important;
+    border-radius: 999px;
+    padding: 6px 10px;
+}
+.text-primary { color: var(--brand-primary) !important; }
+
+/* Card action buttons use brand gradient */
+.btn-card-action {
+    background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+    border: none;
+    color: white !important;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-links li {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.75rem;
+}
+.footer-links li i {
+    color: var(--brand-accent);
+    min-width: 1.25rem;
+    text-align: center;
+}
+.footer-links li a {
+    color: rgba(255,255,255,0.9);
+}
+.footer-links li a:hover {
+    color: #ffffff;
 }
 
 /* Global footer */
@@ -150,7 +246,7 @@ footer {
 
 .about-card-trust:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgba(13, 110, 253, 0.08) !important;
+    box-shadow: 0 16px 32px rgba(124, 58, 237, 0.14) !important;
 }
 
 .about-shield-icon {
@@ -178,8 +274,8 @@ footer {
 }
 
 .search-input-group .form-control:focus {
-    border-color: var(--brand-primary);
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+    border-color: var(--brand-secondary);
+    box-shadow: 0 0 0 0.25rem rgba(147, 62, 234, 0.18);
 }
 
 .search-icon {
@@ -198,7 +294,7 @@ footer {
 
 .btn-search-action:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+    box-shadow: 0 4px 12px rgba(147, 62, 234, 0.25);
 }
 
 .btn-search-action:active {
@@ -207,7 +303,7 @@ footer {
 
 /* Control page */
 .bg-control-page {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(30, 58, 138, 0.7)), url('image/bg-check.jpg') center/cover no-repeat fixed;
+    background: linear-gradient(135deg, rgba(18, 10, 47, 0.75), rgba(77, 14, 143, 0.75)), url('image/bg-check.jpg') center/cover no-repeat fixed;
 }
 
 .glass-card {
@@ -220,9 +316,9 @@ footer {
 }
 
 .glass-card:hover {
-    border-color: rgba(13, 110, 253, 0.8) !important;
+    border-color: rgba(124, 58, 237, 0.8) !important;
     transform: translateY(-3px);
-    box-shadow: 0 20px 40px rgba(13, 110, 253, 0.3), 0 0 20px rgba(13, 110, 253, 0.2) !important;
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.18), 0 0 20px rgba(124, 58, 237, 0.12) !important;
 }
 
 .glass-card h2,
@@ -257,7 +353,7 @@ footer {
 
 .btn-submit-action:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(13, 110, 253, 0.3);
+    box-shadow: 0 8px 16px rgba(124, 58, 237, 0.22);
 }
 
 /* Product page */
@@ -280,9 +376,9 @@ footer {
 }
 
 .product-banner {
-    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.18), transparent 22%),
-                radial-gradient(circle at 90% 15%, rgba(255, 255, 255, 0.12), transparent 15%),
-                linear-gradient(180deg, #2565ff 0%, #0e44d1 45%, #06256e 100%);
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), transparent 22%),
+                radial-gradient(circle at 90% 15%, rgba(255, 255, 255, 0.08), transparent 15%),
+                linear-gradient(180deg, var(--brand-secondary) 0%, var(--brand-primary) 45%, var(--brand-dark) 100%);
     color: white;
     padding: 42px 34px;
     display: flex;
@@ -355,7 +451,7 @@ footer {
 }
 
 .btn-nav-primary {
-    background-color: #4d8bff;
+    background-color: var(--brand-secondary);
     color: white;
 }
 
@@ -426,9 +522,9 @@ footer {
 }
 
 .amount-badge {
-    background-color: #f8f9fa;
-    border: 2px solid #e9ecef;
-    color: #0066ff;
+    background-color: #fbf8ff;
+    border: 2px solid rgba(124,58,237,0.12);
+    color: var(--brand-primary);
     padding: 12px 5px;
     border-radius: 10px;
     text-align: center;
@@ -440,16 +536,16 @@ footer {
 }
 
 .amount-badge:hover {
-    border-color: #0066ff;
-    background-color: #f0f5ff;
+    border-color: var(--brand-primary);
+    background-color: rgba(124,58,237,0.06);
     transform: translateY(-2px);
 }
 
 .amount-badge.selected {
-    background-color: #0066ff;
-    border-color: #0066ff;
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
     color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(124,58,237,0.28);
     transform: translateY(-2px);
 }
 
@@ -477,9 +573,9 @@ footer {
 }
 
 .form-control:focus {
-    border-color: #0066ff;
+    border-color: var(--brand-secondary);
     background-color: #ffffff;
-    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(147, 62, 234, 0.15);
 }
 
 textarea.form-control {
@@ -489,7 +585,7 @@ textarea.form-control {
 
 .btn-submit {
     width: 100%;
-    background-color: #0066ff;
+    background-color: var(--brand-primary);
     color: white;
     border: none;
     padding: 14px;
@@ -498,13 +594,13 @@ textarea.form-control {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
-    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
 }
 
 .btn-submit:hover {
-    background-color: #0052cc;
+    background-color: var(--brand-secondary);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 102, 255, 0.3);
+    box-shadow: 0 6px 15px rgba(124, 58, 237, 0.28);
 }
 
 .btn-submit:active {
