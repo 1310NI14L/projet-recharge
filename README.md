@@ -16,6 +16,7 @@ Le projet s'appuie sur une séparation claire entre le client (frontend statique
 
 ## 📁 Structure du Projet
 
+```text
 projet-recharge/
 │
 ├── backend/
@@ -42,7 +43,7 @@ projet-recharge/
 │
 ├── README.md               # Documentation globale du projet
 └── venv/                   # Environnement virtuel Python (exclu du suivi Git)
-
+```
 ---
 
 ## ⚙️ Configuration de l'Environnement
