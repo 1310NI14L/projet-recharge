@@ -1,84 +1,101 @@
 ﻿# 💳 Plateforme Web de Recharge & Contrôle de Tickets Prépayés
 
-Application web complète pour gérer des tickets de recharge et des validations de coupons prépayés.
+Application web full-stack permettant de gérer la soumission, le suivi et la validation de tickets et de coupons prépayés en temps réel.
 
-## 🧩 Présentation
+---
 
-Ce projet sépare le frontend statique du backend API pour faciliter le déploiement et la maintenance :
+## 🧩 Présentation de l'Architecture
 
-- **Frontend** : pages statiques HTML/CSS/JS pour navigation, soumission de tickets et consultation de statut.
-- **Backend** : API Flask Python avec stockage MySQL et notifications par e-mail.
-- **Base de données** : MySQL pour stocker les tickets, leur statut et les informations associées.
+Le projet s'appuie sur une séparation claire entre le client (frontend statique) et l'API (backend), garantissant un déploiement indépendant et une maintenance facilitée :
 
-## 📁 Structure du projet
+- **Frontend** : Interface utilisateur réactive développée en HTML5, CSS3, JavaScript (ES6+) et Bootstrap.
+- **Backend** : API RESTful développée avec Flask (Python) gérant la logique métier, l'accès aux données et l'envoi d'e-mails de notification.
+- **Base de données** : Relationnelle (MySQL) stockant les demandes de tickets, leurs détails et leur état d'avancement.
+
+---
+
+## 📁 Structure du Projet
 
 projet-recharge/
 │
 ├── backend/
-│   ├── app.py              # API Flask, routes de pages, API tickets et envoi d'e-mail
-│   ├── database.py         # Connexion MySQL et gestion des variables d'environnement
-│   ├── .env.example        # Exemple de configuration pour les secrets
-│   ├── .gitignore          # Fichiers à exclure du dépôt backend
-│   └── requirements.txt    # Dépendances Python du backend
+│   ├── app.py              # Application Flask & définition des routes API
+│   ├── database.py         # Gestionnaire de connexion MySQL & variables d'environnement
+│   ├── .env.example        # Modèle de configuration des secrets local
+│   ├── .gitignore          # Fichiers et dossiers ignorés par Git pour le backend
+│   └── requirements.txt    # Dépendances Python (Flask, PyMySQL, Gunicorn, etc.)
 │
 ├── database/
-│   └── shema.sql           # Script de création de la table tickets
+│   └── shema.sql           # Script SQL d'initialisation de la base et de la table
 │
 ├── frontend/
-│   ├── index.html          # Page d'accueil / Catalogue des recharges
-│   ├── produit.html        # Page produit dynamique selon la carte sélectionnée
-│   ├── controle.html       # Formulaire de suivi / soumission de ticket
-│   ├── statut.html         # Résultats de recherche de ticket
+│   ├── index.html          # Page d'accueil & catalogue des cartes / coupons
+│   ├── produit.html        # Page produit dynamique selon l'opérateur sélectionné
+│   ├── controle.html       # Formulaire de soumission et de contrôle du ticket
+│   ├── statut.html         # Visualisation des résultats de recherche de ticket
 │   └── assets/
 │       ├── bootstrap.bundle.min.js
 │       ├── bootstrap.min.css
-│       ├── main.js         # Logique JavaScript du frontend
-│       ├── style.css       # Styles globaux
-│       └── image/          # Logos des opérateurs
+│       ├── main.js         # Logique d'interaction JS & requêtes Fetch vers l'API
+│       ├── style.css       # Feuilles de styles personnalisées
+│       └── image/          # Ressources visuelles et logos des opérateurs
 │
-├── README.md               # Documentation du projet
-└── venv/                   # Environnement virtuel local (ne pas pousser)
+├── README.md               # Documentation globale du projet
+└── venv/                   # Environnement virtuel Python (exclu du suivi Git)
 
-## ⚙️ Configuration
+---
 
-Copie `backend/.env.example` en `backend/.env` et ajuste les valeurs :
+## ⚙️ Configuration de l'Environnement
 
-```env
+1. Accède au dossier backend/ et duplique le fichier exemple :
+   cd backend
+   cp .env.example .env
+
+2. Ajuste les variables dans le fichier .env selon ta configuration :
+
+# Configuration de la base de données
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=
 DB_NAME=recharge_db
+
+# Configuration du service E-mail (Gmail SMTP / App Password)
 GMAIL_USER=danielahouansou16@gmail.com
-GMAIL_PASSWORD="qmgb jvsw ylzl ydll"
-```
+GMAIL_PASSWORD="votre_mot_de_passe_application"
 
-> Ne publie jamais `backend/.env` dans le dépôt.
+> ⚠️ **Sécurité :** Ne commite jamais le fichier backend/.env sur un dépôt public.
 
-## 🧪 Installation locale
+---
 
-Depuis la racine du projet :
+## 🧪 Installation & Exécution en Local
 
-```bash
+### 1. Préparer l'environnement Python
+
+Depuis la racine du projet, crée et active un environnement virtuel, puis installe les dépendances :
+
+# Activation (sur Windows CMD / PowerShell)
+venv\Scripts\activate
+
+# Activation (sur Linux / macOS)
+source venv/bin/activate
+
+# Installation des dépendances
 cd backend
 python -m pip install -r requirements.txt
-```
 
-## 🚀 Exécution locale
+### 2. Démarrer le Serveur Backend Flask
 
-### Backend Flask
-
-```bash
 cd backend
 python app.py
-```
 
-Puis ouvre `http://127.0.0.1:5000` dans le navigateur.
+Le serveur local démarrera sur http://127.0.0.1:5000.
 
-## 🗄️ Base de données
+---
 
-Exécutez le script SQL ci-dessous pour créer la base et la table :
+## 🗄️ Initialisation de la Base de Données
 
-```sql
+Exécute le script SQL suivant dans ton SGBD (MySQL / phpMyAdmin) pour initialiser la base de données et la structure des tables :
+
 CREATE DATABASE IF NOT EXISTS recharge_db;
 USE recharge_db;
 
@@ -93,12 +110,17 @@ CREATE TABLE IF NOT EXISTS tickets (
     INDEX idx_code_ticket (code_ticket),
     INDEX idx_user_email (user_email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-```
 
-## 🚢 Déploiement
+---
 
-Pour un hébergement comme Render ou un autre service WSGI :
+## 🚢 Guide de Déploiement Production
 
-- Commande de démarrage : `gunicorn backend.app:app`
-- Assure-toi que les variables d’environnement sont configurées sur la plateforme.
-- Assure-toi que ta base MySQL est accessible depuis le backend.
+### Frontend (ex: Netlify / Vercel)
+- **Root directory** : frontend
+- **Build command** : (laisser vide pour des pages statiques)
+- **Publish directory** : . (ou frontend)
+
+### Backend (ex: Render / Railway / Heroku)
+- **Root directory** : backend (ou laisser la racine avec commande ciblée)
+- **Commande de démarrage (WSGI)** : gunicorn backend.app:app (ou gunicorn app:app si le root directory du service est configuré sur backend)
+- **Variables d'environnement** : Configure DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, GMAIL_USER, et GMAIL_PASSWORD directement dans le panneau de ton hébergeur.
